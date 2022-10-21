@@ -1,5 +1,7 @@
 import css from "./App.module.css";
-import HookPractice from "./components/HookPractice";
+import ContentAPIHooks from "./components/ContentAPIHooks";
+// import ContentAPI from "./components/ContentAPI";
+// import HookPractice from "./components/HookPractice";
 // import ContentHooks from "./components/ContentHooks";
 // import Sidebar from "./components/Sidebar";
 // import NavBarForm from "./components/NavBarForm";
@@ -10,7 +12,9 @@ import HookPractice from "./components/HookPractice";
 function App() {
   return (
     <div className={css.App}>
-      <HookPractice />
+      <ContentAPIHooks />
+      {/* <ContentAPI /> */}
+      {/* <HookPractice /> */}
       {/* Add your components here */}
       {/* <ContentHooks />
       <NavBarForm />

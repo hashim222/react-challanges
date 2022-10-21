@@ -5,35 +5,35 @@ import React, { useState } from 'react'
 
 export default function HookPractice() {
 
-    const [isTrue, setIsTrueOrFalse] = useState(false)
     const [login, setLogin] = useState('Login')
     const [logout, setLogout] = useState('Logout')
+    const [isItTrueOrFalse, setIsItTrueOrFalse] = useState(true)
 
-
-    const checkLogin = () => {
+    const handleClick = () => {
         setLogin(login)
         setLogout(logout)
-        setIsTrueOrFalse((isTrue => {
-            return isTrue === true ? false : true
+        setIsItTrueOrFalse((isItTrueOrFalse => {
+            return isItTrueOrFalse === true ? false : true
         }))
+
     }
 
     return (
         <div>
             {
-                isTrue === true ? (
+                isItTrueOrFalse === true ? (
                     <div>
-                        <ul>
-                            <li>one</li>
-                            <li>two</li>
-                            <li>three</li>
-                        </ul>
-                        <button onClick={checkLogin}>{logout}</button>
+                        <form>
+                            <label htmlFor="name">Name:</label>
+                            <br />
+                            <input type="text" name='name' id='name' />
+                            <label htmlFor="password">Password:</label>
+                            <input type="password" name='password' id='password' />
+                        </form>
+                        <button onClick={handleClick}>{login}</button>
                     </div>
                 ) : (
-                    <div>
-                        <button onClick={checkLogin}>{login}</button>
-                    </div>
+                    <button onClick={handleClick}>{logout}</button>
                 )
             }
         </div>
